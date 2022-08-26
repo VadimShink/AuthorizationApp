@@ -11,7 +11,7 @@ class VerificationViewController: UIViewController {
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "backgroundImageView")
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -20,8 +20,14 @@ class VerificationViewController: UIViewController {
     private let mailTextField = MailTextField()
     private let verificationButton = VerificationButton()
     private let collectionView = MailsCollectionView(frame: .zero,
-                                                     collectionViewLayout: UICollectionViewLayout())
-
+                                                     collectionViewLayout: UICollectionViewFlowLayout())
+    
+    private lazy var stackView = UIStackView(
+        arrangedSubviews: [mailTextField, verificationButton, collectionView],
+        axis: .vertical,
+        spacing: 20
+    )
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,14 +35,22 @@ class VerificationViewController: UIViewController {
         setDelegates()
         setConstraints()
     }
-
+    
     private func setupViews() {
         view.addSubview(backgroundImageView)
         view.addSubview(statusLabel)
+        view.addSubview(stackView)
+        verificationButton.addTarget(self,
+                                     action: #selector(verificationButtonTapped), for: .touchUpInside)
     }
     
     private func setDelegates() {
-        
+        collectionView.dataSource = self
+        collectionView.selectMailDelegate = self
+    }
+    
+    @objc private func verificationButtonTapped() {
+        print("button tap")
     }
     
 }
@@ -49,10 +63,18 @@ extension VerificationViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idCell.idMailCell.rawValue, for: indexPath) as? MailCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IdCell.idMailCell.rawValue, for: indexPath) as? MailCollectionViewCell else {
             return UICollectionViewCell()
         }
         return cell
+    }
+}
+
+//MARK: - SelectProposedMailProtocol
+
+extension VerificationViewController: SelectProposedMailProtocol {
+    func selectProposedMail(indexPath: IndexPath) {
+        print(indexPath)
     }
 }
 
@@ -69,6 +91,14 @@ extension VerificationViewController {
             statusLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 300),
             statusLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             statusLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            mailTextField.heightAnchor.constraint(equalToConstant: 50),
+            stackView.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 2),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
     }
 }

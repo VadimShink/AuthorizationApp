@@ -21,7 +21,7 @@ class MailTextField: UITextField {
         backgroundColor = .white
         borderStyle = .none
         layer.cornerRadius = 10
-        textColor = .red
+        textColor = .black
         leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: self.frame.height))
         leftViewMode = .always
         clearButtonMode = .always
