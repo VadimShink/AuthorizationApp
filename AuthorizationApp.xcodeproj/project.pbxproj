@@ -12,6 +12,12 @@
 		1459E2B728B8D164002EF9C1 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459E2B628B8D164002EF9C1 /* VerificationViewController.swift */; };
 		1459E2BC28B8D169002EF9C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1459E2BB28B8D169002EF9C1 /* Assets.xcassets */; };
 		1459E2BF28B8D169002EF9C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1459E2BD28B8D169002EF9C1 /* LaunchScreen.storyboard */; };
+		1459E2CC28B8D62C002EF9C1 /* StatusLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459E2CB28B8D62C002EF9C1 /* StatusLabel.swift */; };
+		1459E2D028B8D974002EF9C1 /* UIStackVIew + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459E2CF28B8D974002EF9C1 /* UIStackVIew + Extensions.swift */; };
+		1459E2D228B8DA2E002EF9C1 /* MailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459E2D128B8DA2E002EF9C1 /* MailTextField.swift */; };
+		1459E2D428B8DB7D002EF9C1 /* VerificationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459E2D328B8DB7D002EF9C1 /* VerificationButton.swift */; };
+		1459E2D628B8DCB1002EF9C1 /* MailsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459E2D528B8DCB1002EF9C1 /* MailsCollectionView.swift */; };
+		1459E2DB28B8DDB8002EF9C1 /* MailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459E2DA28B8DDB8002EF9C1 /* MailCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		1459E2BB28B8D169002EF9C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1459E2BE28B8D169002EF9C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1459E2C028B8D169002EF9C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1459E2CB28B8D62C002EF9C1 /* StatusLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusLabel.swift; sourceTree = "<group>"; };
+		1459E2CF28B8D974002EF9C1 /* UIStackVIew + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackVIew + Extensions.swift"; sourceTree = "<group>"; };
+		1459E2D128B8DA2E002EF9C1 /* MailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailTextField.swift; sourceTree = "<group>"; };
+		1459E2D328B8DB7D002EF9C1 /* VerificationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationButton.swift; sourceTree = "<group>"; };
+		1459E2D528B8DCB1002EF9C1 /* MailsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailsCollectionView.swift; sourceTree = "<group>"; };
+		1459E2DA28B8DDB8002EF9C1 /* MailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 				1459E2C728B8D243002EF9C1 /* Models */,
 				1459E2C928B8D24F002EF9C1 /* Views */,
 				1459E2C828B8D248002EF9C1 /* Controllers */,
+				1459E2CD28B8D938002EF9C1 /* Extensions */,
 				1459E2CA28B8D274002EF9C1 /* Resources */,
 			);
 			path = AuthorizationApp;
@@ -90,6 +103,8 @@
 		1459E2C928B8D24F002EF9C1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1459E2D928B8DDA1002EF9C1 /* Cells */,
+				1459E2DC28B8E038002EF9C1 /* VerificationVC */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -102,6 +117,41 @@
 				1459E2C028B8D169002EF9C1 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		1459E2CD28B8D938002EF9C1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1459E2CE28B8D95E002EF9C1 /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1459E2CE28B8D95E002EF9C1 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				1459E2CF28B8D974002EF9C1 /* UIStackVIew + Extensions.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		1459E2D928B8DDA1002EF9C1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1459E2DA28B8DDB8002EF9C1 /* MailCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1459E2DC28B8E038002EF9C1 /* VerificationVC */ = {
+			isa = PBXGroup;
+			children = (
+				1459E2CB28B8D62C002EF9C1 /* StatusLabel.swift */,
+				1459E2D128B8DA2E002EF9C1 /* MailTextField.swift */,
+				1459E2D328B8DB7D002EF9C1 /* VerificationButton.swift */,
+				1459E2D528B8DCB1002EF9C1 /* MailsCollectionView.swift */,
+			);
+			path = VerificationVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,7 +224,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1459E2CC28B8D62C002EF9C1 /* StatusLabel.swift in Sources */,
+				1459E2DB28B8DDB8002EF9C1 /* MailCollectionViewCell.swift in Sources */,
+				1459E2D628B8DCB1002EF9C1 /* MailsCollectionView.swift in Sources */,
+				1459E2D428B8DB7D002EF9C1 /* VerificationButton.swift in Sources */,
 				1459E2B728B8D164002EF9C1 /* VerificationViewController.swift in Sources */,
+				1459E2D228B8DA2E002EF9C1 /* MailTextField.swift in Sources */,
+				1459E2D028B8D974002EF9C1 /* UIStackVIew + Extensions.swift in Sources */,
 				1459E2B328B8D164002EF9C1 /* AppDelegate.swift in Sources */,
 				1459E2B528B8D164002EF9C1 /* SceneDelegate.swift in Sources */,
 			);
