@@ -36,9 +36,9 @@ class MailTextField: UITextField {
         leftViewMode = .always
         clearButtonMode = .always
         returnKeyType = .done
+        autocorrectionType = .no
         placeholder = "Enter mail"
         font = UIFont(name: "Apple SD Gothic Neo", size: 20)
-        tintColor = .blue
         translatesAutoresizingMaskIntoConstraints = false
     }
 }
