@@ -3,7 +3,7 @@ Application for checking the correctness of the entered mail
 
 Стэк:
 
-1 MVC + Network
+1 MVC + Network \n
 2 UIKit
 3 Верстка кодом
 4 URLSession + API + JSON
