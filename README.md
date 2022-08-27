@@ -2,6 +2,7 @@
 Application for checking the correctness of the entered mail
 
 Стэк:
+
 MVC + Network
 UIKit
 Верстка кодом
